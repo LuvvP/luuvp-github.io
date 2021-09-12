@@ -1,0 +1,618 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box
+}
+
+
+html{
+	scroll-behavior: smooth;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* 
+1. Vị trí
+2. Kích thước
+3. Màu sắc
+4. Kiểu dáng (Kiểu chữ, hình tròn, hình vuông)
+*/
+.text-white{
+	color: #fff !important;
+}
+/* Common */
+.col-half{
+	width: 50%;
+}
+
+.col{
+	width: 100%;
+}
+
+.cursor{
+	cursor: pointer;
+}
+
+.a-tag-off{
+	text-decoration: none;
+}
+
+
+#header{
+	height: 46px;
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	overflow: hidden;
+}
+
+#nav{
+	display: inline-block;
+}
+
+#nav li{
+	position: relative;
+	display: inline-block;
+}
+/* Khi chúng ta hover vào li con của nav thì thẻ a được hover */
+#nav .subnav li:hover a,
+#nav > li:hover > a{ 
+	background-color:#ccc;
+	color: #000;
+}
+
+/* Thẻ con trực tiếp của li cấp 1 bị ảnh hưởng, còn cấp 2 không bị ảnh hưởng */
+#nav > li > a{ 
+	color: white;
+	text-transform: uppercase;
+}
+
+#nav li a{
+	text-decoration: none;
+	line-height: 46px;
+	padding: 0px 24px;
+	display: block;
+}
+
+#nav .subnav{
+	top: 100%;
+	min-width: 160px;
+	box-shadow: 0 0 5px black;
+	position: absolute;
+	background-color: white;
+	display: none;
+}
+
+#nav > li:hover .subnav{
+	display: block;
+}
+
+#nav .subnav li{
+	width: 100%;
+}
+
+#nav .subnav a{
+	color: #000;
+	padding:  0 14px;
+	line-height: 38px;
+}
+
+#nav .nav-arrow-down{
+	font-size: 14px;
+}
+
+#header .search-btn,
+#header .mobile-menu-btn{
+	display: inline-block;
+	float: right;
+	padding: 0 24px;
+}
+
+#header .mobile-menu-btn{
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#header .search-icon{
+	color: #fff;
+	font-size: 16px;
+	line-height: 46px;
+	
+}
+
+#header .mobile-menu-btn:hover{
+	background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover > .menu-icon{
+	color: #000;
+}
+
+#header .search-btn:hover{
+	background-color: #f44336;
+	cursor: pointer;
+}
+
+#slider{
+	position: relative;
+	margin-top: 46px;
+	padding-top: 50%;
+	background: url('/assets/img/slider/slider1.jpg') top center / cover  no-repeat;
+	 /* Khi thêm padding-top: 50% sẽ luôn bằng 1 nửa chiều ngang*/
+					/* Theo thứ tự URL, bgr-position, bgr repeat  */
+}
+
+
+.hide{
+	display: none;
+}
+
+#main{
+	width: 100%;
+}
+#slider .text-content{
+	position: absolute;
+	color: white;
+	bottom: 0;
+	padding: 32px 16px;
+	width: 100%;
+	text-align: center;
+}
+
+#slider .text-heading{
+	font-weight: 500;
+}
+
+#slider .text-description{
+	margin: 15px;
+	font-weight: 700;
+}	
+
+#content-section{
+	width: 800px;
+	max-width: 100%;
+	padding: 64px 16px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content .section-heading,
+#content .section-sub-heading{
+	font-size: 30px;
+	font-weight: 400;
+	text-align: center;
+	display: block;
+	padding-bottom: 24px;
+}
+
+#content .section-sub-heading{
+	font-style: italic;
+	opacity: 0.6;
+	font-size: 15px;
+	font-weight: 100;
+}
+
+#content .about-text{
+	text-align: justify;
+	font-size: 15px;
+	line-height: 22.5px;
+}
+
+#content .member-list{
+	padding: 32px 0;
+	width: 100%;
+	display: flex;
+}
+
+#content .member-item{
+	margin: auto;
+	text-align: center;
+}
+
+#content .member-name{
+	font-size: 15px;
+}
+
+#content .member-img{
+	margin-top: 15px;
+	width: 154px;
+	border-radius: 4px;
+}
+
+.tour-section{
+	background-color: black;
+	padding: 32px 16px;
+}
+.content-section{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tour-section .sold-out{
+	background-color: #f44336;
+	color: #fff;
+	padding: 3px 4px;
+	margin-left: 15px;
+}
+
+.ticked-list{
+	background-color: #fff;
+	/* max-width: 980px; */
+	margin-top: 5px;
+	font-size: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ticked-list li{
+	padding: 8px 16px !important;
+	border-bottom: 1px solid #ddd ;
+	color: #757575;
+	list-style: none;
+}
+
+.ticked-list .quantity{
+	float: right;
+	width: 24px;
+	height: 24px;
+	background-color: #000;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 24px;
+}
+
+.place-heading{
+	font-weight: 600s;
+}
+
+.place-list{
+	display: flex;
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-top: 32px;
+	max-width: 980px;
+}
+
+.place-list .place-item{
+	align-items: center;
+	width: 33.3333%;
+	padding: 0 8px;
+	margin: 0 0 16px;
+}
+
+.place-list .place-body{
+	padding: 15px;	
+	background-color: #ffffff;
+}
+
+.place-list .place-img{
+	width: 100%;
+	display: block;
+}
+
+.place-list .place-img:hover{
+	opacity: 0.6;
+}
+
+.place-list .place-heading,
+.place-list .place-time,
+.place-list .place-desc{
+	margin: 15px 0;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+.place-list .place-time{
+	opacity: 0.6;
+}
+
+
+.place-list .place-buy-btn{
+	padding: 8px 16px;
+	font-size: 15px;
+	background-color: #000;
+	color: #ddd;
+	text-decoration: none;
+	margin: 5px 0;
+	display: inline-block;
+	border: none;
+}
+
+.place-buy-btn:hover{
+	color: #000;
+	background-color: #ccc;
+}
+
+.content-contact{
+	display: flex;
+}
+
+.content-input{
+	margin: auto;
+}
+
+.address{
+	margin: 10px;
+	font-size: 20px;
+}
+
+.input-address{
+	display: flex;
+}
+
+.input-form{
+	display: block;
+}
+
+.input-address,
+.input-message{
+	padding: 8px 0 8px 8px;
+}
+
+.input-name{
+	margin: auto;
+}
+
+.send-btn{
+	font-size: 15px;
+	float: right;
+	padding: 12px 16px;
+	margin: 12px 0;
+	background-color: #000;
+	color: #ffffff;
+	border: none;
+	display: block;
+}
+
+.send-btn:hover{
+	background-color: #ccc;
+	color: #000;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.modal-container{
+	background-color: #fff;
+	width: 900px;
+	min-height: 200px;
+	max-width: calc(100% - 32px);
+	animation: modalTransitionIn ease .6s
+}
+
+.header-container{
+	background-color: #009688;
+	padding: 32px 16px;
+	position: relative;
+	color: #fff;
+	letter-spacing: 4px;
+	height: 129px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.modal-close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 8px 10px 12px;
+	line-height: 20px;
+	font-size: 14px;
+	opacity: 0.8;
+}
+
+.modal-close:hover{
+	background-color: #fff;
+	color: #000;
+	cursor: pointer;
+	opacity: 1;
+}
+.modal-header{
+	font-size: 30px;
+}
+
+.modal-body{
+	padding: 0.15px 16px 15px 16px;
+}
+
+.modal-label{
+	font-size: 15px;
+	margin: 15px 0 6px 2px;
+	display: block;
+}
+
+.modal-input{
+	padding: 8px;
+	width: 100%;
+	border: 1px solid #ccc;
+	font-size: 15px;
+}
+
+#buy-tickeds{
+	padding: 16px;
+	margin: 16px 0;
+	background-color: #009688;
+	width: 100%;
+	display: inline-block;
+	font-size: 15px;
+	color: #fff;
+	font-weight: 500;
+	border: none;
+}
+
+#buy-tickeds:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.contact-address{
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.icon-address{
+	width: 30px;
+	display: inline-block;
+}
+
+.input-name{
+	padding: 0 0 0 8px;
+	width: 100%;
+}
+
+.input-contact{
+	border: 1px solid #ccc;
+	font-size: 15px;
+	padding: 8px;
+	width: 100%;
+	outline: none;
+}
+
+.input-message{
+	padding-left: 16px;
+	left: 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.input-address{
+	padding: 0 0 0 8px;
+}
+
+.content-contact{
+	padding: 32px 0;
+}
+
+.map-section img{
+	width: 100%;
+}
+
+#footer{
+	margin: 64px 16px;
+	display: flex;
+}
+
+.network-section{
+	margin: auto;
+}
+
+.network-section > a{
+	color: rgb(54, 54, 54);
+	font-size: 24px;
+}
+.end-footer{
+	margin: 15px 0;
+	text-align: center;
+}
+
+.network-section p a,
+.network-section p{
+	color: rgb(54, 54 ,54);
+	font-size: 15px;
+	opacity: 0.8;
+}
+
+.a-tag-off:hover{
+	opacity: 0.7;
+}
+
+.modal-footer{
+	width: 100%;
+}
+
+.modal-help{
+	display: block;
+	margin: 15px 0;
+	font-size: 15px;
+	line-height: 1.5;
+	text-align: right;
+}
+
+.modal-help a{
+	color: #2196F3;
+}
+
+@keyframes modalTransitionIn {
+	from {
+		transform: translateY(-200px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* CSS Tablet */
+@media screen and (max-width: 63.9375em) and (min-width: 46.25em) {
+	#content-section{
+		width: 768px;
+	}
+}
+
+/* CSS Mobile */
+@media screen and (max-width: 46.1875em){
+	#header .mobile-menu-btn{
+		display: block;
+	}
+	.mobile-hide{
+		display: none;
+	}
+
+	#nav{
+		display: block;
+	}
+	#nav li{
+		display: block;
+	}
+
+	#nav .nav-home{
+		display: inline-block;
+	}
+
+
+	#header .search-btn{
+		display: none;
+	}
+	.place-list{
+		display: block;
+	}
+	.place-list .place-item{
+		width: 100%;
+	}
+	.tour-section{
+		padding: 32px 0px;
+	}
+/* CONTACT */
+	.col{
+		width: 100%;
+	}
+
+	.content-contact{
+		display: block;
+	}
+	.input-address{
+		display: block;
+	}
+	.input-address,
+	.input-message{
+		padding: 8px 0 0 0;
+	}
+	.input-name{
+		padding: 0;
+	}
+}
